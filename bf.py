@@ -248,6 +248,7 @@ def compileCode():
 '''
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAXMEM %d
 unsigned char memory[MAXMEM];
@@ -263,6 +264,8 @@ void incrementInstrCount()
 
 int main(int argc, char **argv)
 {
+	memset(memory, 0, MAXMEM);
+
 ''' % (maxMemory, maxInstructions)
 
 	for p in program:
